@@ -1,0 +1,76 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Inventory Dashboard
+    link(rel='stylesheet', href='/css/style.css')
+
+  body
+    .dashboard-container
+
+      // LEFT SECTION - Dashboard Content
+      .left-section
+        h1 Product Inventory
+
+        // Flash Messages
+        if success
+          .alert.success #{success}
+        if error
+          .alert.error #{error}
+
+        // TABLE SECTION
+        .table-section
+          table
+            thead
+              tr
+                th ID
+                th Image
+                th Product Name
+                th Category
+                th Price (UGX)
+                th Stock
+                th Actions
+
+            tbody
+              if products && products.length > 0
+                each product in products
+                  tr
+                    td #{product.id}
+                    td 
+                      if product.image
+                        img(src='/uploads/' + product.image, width='50', height='50', alt='product')
+                      else
+                        span No Image
+                    td #{product.name}
+                    td #{product.category}
+                    td #{Number(product.price).toLocaleString('en-US')}
+                    td #{product.stock}
+                    td 
+                      button.edit-btn Edit
+                      button.delete-btn Delete
+              else
+                tr
+                  td(colspan='7') No products found. Add your first product!
+
+      // RIGHT SECTION - Add Product Form
+      .right-section
+        .form-card
+          h2 Add New Product
+
+          form(action="/add-product", method="POST", enctype="multipart/form-data")
+            input(type='text', name='name', placeholder='Product Name', required)
+            textarea(name='description', placeholder='Product Description', rows='3', required)
+            input(type='text', name='category', placeholder='Category', required)
+            input(type='number', name='price', placeholder='Price (UGX)', step='0.01', required)
+            input(type='number', name='stock', placeholder='Stock Quantity', required)
+
+            .row-inputs
+              input(type='file', name='image', accept='image/jpeg,image/png')
+
+            .buttons
+              button.save-btn(type='submit') SAVE PRODUCT
+              button.clear-btn(type='reset') CLEAR
+
+    // Optional: Validation Script
+    script(src='/js/dashboardvalidation.js')

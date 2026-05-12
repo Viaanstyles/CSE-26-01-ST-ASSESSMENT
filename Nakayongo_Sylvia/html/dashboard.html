@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dashboard UI</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="dashboard-container">
+      <!-- LEFT SECTION -->
+      <div class="left-section">
+        <!-- TOP CARD -->
+        <div class="big-card">
+          <div class="stat">
+            <h2>UGX 50,000,000</h2>
+            <p>Sales</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="stat">
+            <h2>UGX 15,000,000</h2>
+            <p>Orders</p>
+          </div>
+        </div>
+
+        <!-- SMALL CARDS -->
+        <div class="small-cards">
+          <div class="small-card green">
+            <h2>UGX 42,000,000</h2>
+            <p>In stock</p>
+          </div>
+
+          <div class="small-card red">
+            <h2>5</h2>
+            <p>Out of stock</p>
+          </div>
+        </div>
+
+        <!-- TABLE -->
+        <div class="table-section">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>CATEGORY</th>
+                <th>PRICE (UGX)</th>
+                <th>QUANTITY</th>
+              </tr>
+  
+            </table>
+        </div>
+      </div>
+
+      <!-- RIGHT SECTION -->
+      <div class="right-section">
+        <div class="form-card">
+          <h2>Add Product</h2>
+
+          <form>
+            <input type="text" placeholder="Product Name" />
+
+            <input type="text" placeholder="Category" />
+
+            <input type="number" placeholder="Price" />
+
+            <input type="number" placeholder="Quantity" />
+
+            <div class="row-inputs">
+              <input type="text" placeholder="Color" />
+
+              <input type="file" />
+            </div>
+
+            <div class="buttons">
+              <button type="submit" class="save-btn">SAVE</button>
+
+              <button type="reset" class="clear-btn">CLEAR</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
