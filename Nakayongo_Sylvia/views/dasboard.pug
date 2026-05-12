@@ -1,0 +1,52 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='style.css')
+  title Dashboard UI
+  link(rel='stylesheet' href='style.css')
+.dashboard-container
+  // LEFT SECTION
+  .left-section
+    // TOP CARD
+    .big-card
+      .stat
+        h2 UGX 50,000,000
+        p Sales
+      .divider
+      .stat
+        h2 UGX 15,000,000
+        p Orders
+    // SMALL CARDS
+    .small-cards
+      .small-card.green
+        h2 UGX 42,000,000
+        p In stock
+      .small-card.red
+        h2 5
+        p Out of stock
+    // TABLE
+    .table-section
+      table
+        thead
+          tr
+            th ID
+            th NAME
+            th CATEGORY
+            th PRICE (UGX)
+            th QUANTITY
+  // RIGHT SECTION
+  .right-section
+    .form-card
+      h2 Add Product
+      form
+        input(type='text' placeholder='Product Name')
+        input(type='text' placeholder='Category')
+        input(type='number' placeholder='Price')
+        input(type='number' placeholder='Quantity')
+        .row-inputs
+          input(type='text' placeholder='Color')
+          input(type='file')
+        .buttons
+          button.save-btn(type='submit') SAVE
+          button.clear-btn(type='reset') CLEAR
